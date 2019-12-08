@@ -61,6 +61,7 @@ X 3. Add/update controllers for models (CRUD actions)
 13. Project video walkthrough 
 14. Review Learn project breakdown and see if there is anything else 
 15. Delete any unnecessary files and save notes file info elsewhere
+    15a. Delete locations views folder if you are not using it 
 16. Blog
 17. Submit project :) 
 
@@ -71,7 +72,7 @@ Review, Climb, Location
 
 #  <li><%= link_to "Add a new bourbon", new_bourbon_path %> </li>
 
-
+<li><%= link_to "Add a new climb", new_climb_path %> </li>
 -------------------------------------------------------------------
 
 
