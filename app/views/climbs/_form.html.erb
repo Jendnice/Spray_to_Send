@@ -1,0 +1,31 @@
+<%= render partial: 'layouts/errors', locals:{object: @climb}%>
+<%= form_for(@climb) do |f| %>
+<div>
+    <%= f.label :name %>
+    <%= f.text_field :name%>
+</div>
+
+<div>
+    <%= f.label :type %>
+    <%= f.text_field :type%>
+</div>
+
+<div>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+</div>
+
+<p>Please select a location:</p>
+<div>
+    <%= f.collection_select :location_id, location.all, :id, :name, include_blank: "Pick one" %>
+</div>
+
+<p>or, create a new location!</p>
+<%= f.fields_for :location do |l| %>
+    <%= l.label :name %>
+    <%= l.text_field :name %>
+<% end %>
+<br />
+<%= f.submit %>
+
+<% end %>

@@ -45,7 +45,7 @@ X 1. Add additional models (review, climb, location) - as g resources (?)
    X 1a. include validations 
 X 2. Build relationships between models
 X 3. Add/update controllers for models (CRUD actions)
-  3a. Sign up, Log in, Log out
+  X 3a. Sign up, Log in, Log out
 4. Add/update views (include partials)
   4a. Include a user submittable attribute on the through (the "Reviews")
   4b. Build a nested resource (see notes)
