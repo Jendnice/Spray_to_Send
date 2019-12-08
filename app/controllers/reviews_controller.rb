@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
     before_action :require_login
 
     def index
-        if @climb = Climb.find_by_id(params[:climb_id])
+        if find_climb
             @reviews = @climb.reviews.all
         else
             @reviews = Review.all
@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
     end
 
     def new
-        if @climb = Climb.find_by_id(params[:climb_id])
+        if find_climb
             @review = @climb.reviews.build
         else
             @review = Review.new
@@ -33,8 +33,17 @@ class ReviewsController < ApplicationController
     end
 
     private
+
     def review_params
         params.require(:review).permit(:stars, :title, :content, :climb_id)
+    end
+
+    # def find_review
+    #     @review = Review.find_by(id: params[:id])
+    # end
+
+    def find_climb
+        @climb = Climb.find_by_id(params[:climb_id])
     end
 
 
