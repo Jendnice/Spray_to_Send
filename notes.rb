@@ -42,15 +42,14 @@ To Dos:
 --Schedule project review as soon as you can--
 
 X 1. Add additional models (review, climb, location) - as g resources (?)
-   1a. include validations 
-2. Build relationships between models
-  2a. Include a user submittable attribute on the through (the "Adventure") (see notes)
-3. Add/update controllers for models (CRUD actions)
+   X 1a. include validations 
+X 2. Build relationships between models
+X 3. Add/update controllers for models (CRUD actions)
   3a. Sign up, Log in, Log out
 4. Add/update views (include partials)
-  4a. Decide if you are using Admin or not and update as needed 
+  4a. Include a user submittable attribute on the through (the "Reviews")
+  4b. Build a nested resource (see notes)
 5. Build scope method that is chainable and has url to see working feature (see notes)
-6. Build a nested resource (see notes)
 7. Third party authentiction through Devise/Omniauth - Github (or Google)
 8. Error messages (see notes)
 9. Template design and updates
