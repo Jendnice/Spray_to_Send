@@ -8,6 +8,6 @@ class Climb < ApplicationRecord
     accepts_nested_attributes_for :location
   
     validates :name, presence: true
-    validates :type, presence: true
+    validates :grade, presence: true
 
 end
