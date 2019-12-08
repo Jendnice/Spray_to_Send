@@ -10,4 +10,19 @@ class Climb < ApplicationRecord
     validates :name, presence: true
     validates :grade, presence: true
 
+    scope :grouped_ratings, -> {left_joins(:reviews).group(:id).order('avg(stars) desc')}
+
+#write the scope method
+#custom route
+#controller method
+#view 
+
+
+
+    #   def self.alphabetical_order
+    #     order(:name)
+    #   end
+
+
+
 end

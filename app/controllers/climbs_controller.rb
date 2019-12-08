@@ -23,9 +23,10 @@ class ClimbsController < ApplicationController
         end
     end
 
-    # def ratings
-    #     @climbs = Climb.grouped_ratings
-    # end
+    def ratings
+        @climbs = Climb.grouped_ratings
+    end
+
 
     private
 

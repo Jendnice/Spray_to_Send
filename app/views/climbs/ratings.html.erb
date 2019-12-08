@@ -1,0 +1,10 @@
+<h1>Welcome to your ratings page!</h1>
+
+<% @climbs.each do |c| %>
+    <h2><%= c.name %> - <%= c.grade %> </h2>
+    <% c.reviews.each do |r| %>
+        <h4><%= r.title %> - <%= r.stars %> stars </h4>
+        <p><%= r.content%> </p>
+    <% end %>
+    <%= link_to "Review this climb", new_climb_review_path(c)%>
+<% end %>

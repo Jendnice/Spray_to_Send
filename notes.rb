@@ -73,15 +73,16 @@ Review, Climb, Location
 
 
 -------------------------------------------------------------------
-- Add before_action (require_login and find method) in controllers
 
 - [] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
 - [] Include third party signup/login (how e.g. Devise/OmniAuth)
 - [] Include form display of validation errors (form URL e.g. /recipes/new)
 
+- Update "stars" in views so it shows where needed, but pluralizes appropriately.
 - Add validations or other catches for uniqueness to avoid redundancy (ex. multiple climbs with same name)
 - Update collections in views to call on instance variable (define in controller), instead of calling on all in view (Ex. Climb.all)
 - Continue building out views and links for a more comprehensive and user-friendly interface (climb show views, etc.)
+- Based on what you build out in views, etc.: Update before_action (require_login and find method) in controllers
  
 
 <body>
