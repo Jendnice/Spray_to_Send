@@ -1,5 +1,7 @@
 class ClimbsController < ApplicationController
 
+    before_action :require_login
+
     def index
         @climbs = Climb.all
     end

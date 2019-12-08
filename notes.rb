@@ -46,14 +46,15 @@ X 1. Add additional models (review, climb, location) - as g resources (?)
 X 2. Build relationships between models
 X 3. Add/update controllers for models (CRUD actions)
   X 3a. Sign up, Log in, Log out
-4. Add/update views (include partials)
-  4a. Include a user submittable attribute on the through (the "Reviews")
-  4b. Build a nested resource (see notes)
+X 4. Add/update views (include partials)
+  X 4a. Include a user submittable attribute on the through (the "Reviews")
+  X 4b. Build a nested resource (see notes)
+
 5. Build scope method that is chainable and has url to see working feature (see notes)
 7. Third party authentiction through Devise/Omniauth - Github (or Google)
-8. Error messages (see notes)
+8. Error messages (see notes) - do have error messages, but might need to fine-tune or add the red box around the form fields 
 9. Template design and updates
-10. DRY code
+10. DRY code (see spec points about this)
   10a. Helper methods 
 
 11. Update README, MIT license, etc. (see additional lessons and docs as needed)
@@ -70,9 +71,22 @@ Ex. rails g resource Book title:string
 
 Review, Climb, Location
 
-#  <li><%= link_to "Add a new bourbon", new_bourbon_path %> </li>
 
-<li><%= link_to "Add a new climb", new_climb_path %> </li>
 -------------------------------------------------------------------
+- Add before_action (require_login and find method) in controllers
 
+- [] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
+- [] Include third party signup/login (how e.g. Devise/OmniAuth)
+- [] Include form display of validation errors (form URL e.g. /recipes/new)
+
+- Add validations or other catches for uniqueness to avoid redundancy (ex. multiple climbs with same name)
+- Update collections in views to call on instance variable (define in controller), instead of calling on all in view (Ex. Climb.all)
+- Continue building out views and links for a more comprehensive and user-friendly interface (climb show views, etc.)
+ 
+
+<body>
+    <%= render 'layouts/nav' %>
+    <%= yield %>
+  </body>
+</html>
 

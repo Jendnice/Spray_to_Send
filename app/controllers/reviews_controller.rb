@@ -1,5 +1,7 @@
 class ReviewsController < ApplicationController
 
+    before_action :require_login
+
     def index
         if @climb = Climb.find_by_id(params[:climb_id])
             @reviews = @climb.reviews.all
