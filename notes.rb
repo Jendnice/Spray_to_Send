@@ -41,7 +41,7 @@ To Dos:
 
 --Schedule project review as soon as you can--
 
-1. Add additional models (review, climb, location) - as g resources (?)
+X 1. Add additional models (review, climb, location) - as g resources (?)
    1a. include validations 
 2. Build relationships between models
   2a. Include a user submittable attribute on the through (the "Adventure") (see notes)
