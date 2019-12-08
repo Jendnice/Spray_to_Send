@@ -1,0 +1,11 @@
+<% if @climb %>
+    <h1> View all the reviews for  <%= @climb.name %>!</h1>
+<% else %>
+    <h1> View all the reviews! </h1>
+<% end %>
+
+<% @reviews.each do |r| %>
+    <h2> <%= r.climb.name %></h2>
+    <h2> <%= r.title %> - <%= r.stars %> </h2>
+    <p> <%= r.content %> </p>
+<% end %>
