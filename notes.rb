@@ -26,7 +26,7 @@ Reviews
 - Content
 - climb_id
 - user_id
-- belongs_to :Climb
+- belongs_to :climb
 - belongs_to :user
 
 
@@ -41,9 +41,9 @@ To Dos:
 
 --Schedule project review as soon as you can--
 
-X 1. Add additional models (adventure, land) - as g resources (?)
-  X 1a. include validations 
-X 2. Build relationships between models
+1. Add additional models (review, climb, location) - as g resources (?)
+   1a. include validations 
+2. Build relationships between models
   2a. Include a user submittable attribute on the through (the "Adventure") (see notes)
 3. Add/update controllers for models (CRUD actions)
   3a. Sign up, Log in, Log out
@@ -67,6 +67,8 @@ X 2. Build relationships between models
 
 
 Ex. rails g resource Book title:string
+
+Review, Climb, Location
 
 #  <li><%= link_to "Add a new bourbon", new_bourbon_path %> </li>
 
