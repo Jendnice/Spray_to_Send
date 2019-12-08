@@ -68,17 +68,9 @@ X 2. Build relationships between models
 
 Ex. rails g resource Book title:string
 
+#  <li><%= link_to "Add a new bourbon", new_bourbon_path %> </li>
+
 
 -------------------------------------------------------------------
 
-How to install:
-Add gem ‘devise’ to gemfile
-Run bundle install in terminal
-Run rails g devise:install in terminal
 
-Generate User Model
-Run rails g devise user in terminal
-Run rake db:migrate to migrate user table
-
-Generate Devise Views
-Run rails g devise:views in terminal
