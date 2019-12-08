@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
-  
-  resources :locations
-  resources :climbs
+
   resources :reviews
-  
+  resources :climbs do
+    resources :reviews, only: [:new, :index]
+  end 
+
+  resources :locations
+  devise_for :users, :controllers => {registrations: 'registrations'}
   root to: 'application#welcome'
 
-  devise_for :users, :controllers => {registrations: 'registrations'}
-
 end
+
+
+#  get 'climbs/grouped_ratings', to: 'climbs#ratings'
+
