@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_08_191133) do
+ActiveRecord::Schema.define(version: 2019_12_08_202000) do
 
   create_table "climbs", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.string "grade"
     t.string "description"
     t.integer "location_id", null: false
     t.datetime "created_at", precision: 6, null: false
