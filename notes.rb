@@ -74,8 +74,6 @@ Review, Climb, Location
 
 -------------------------------------------------------------------
 
-    #******* RECORD YOUR CODING SESSION!!!!! *********
-
 - [x] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
 - [x] Include third party signup/login (how e.g. Devise/OmniAuth)
 - [x] Include form display of validation errors (form URL e.g. /recipes/new)
@@ -85,7 +83,6 @@ Review, Climb, Location
 
 - Continue building out views and links for a more comprehensive and user-friendly interface (climb show views, etc.)
 - Based on what you build out in views, etc.: Update before_action (require_login and find method) in controllers
-- Update "stars" in views so it shows where needed, but pluralizes appropriately.
 - Some way to search for climbs, or have it search before creating new (first_or_create type thingy)
 - Add additional coloring for validation errors/messages if possible. (See Avi video or look up how to do it and add.)
 - Seed data
@@ -93,6 +90,7 @@ Review, Climb, Location
 - Add validations or other catches for uniqueness to avoid redundancy (ex. multiple climbs with same name)
 - Update collections in views to call on instance variable (define in controller), instead of calling on all in view (Ex. Climb.all)
 - Add another scope method (?) Make sure you completely understand the one you have in there! (Alphabetize?) Watch video.
+    -Something like this for a search: scope :search, -> (query) { where("name LIKE ?", "%" + query + "%") }
 - See list and specs for additionals
 - template! :)
 
@@ -112,6 +110,7 @@ Review, Climb, Location
         <%= climb_fields.text_field :name %>
         <% end %>
     </div>
+
 
 
 
