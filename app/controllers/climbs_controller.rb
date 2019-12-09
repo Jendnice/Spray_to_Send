@@ -1,7 +1,7 @@
 class ClimbsController < ApplicationController
 
     before_action :require_login
-    # before_action :find_climb, only: [:show, :edit, :update]
+    before_action :find_climb, only: [:show, :edit, :update]
    
 
     def index
@@ -28,7 +28,7 @@ class ClimbsController < ApplicationController
     end
 
     def show
-        @climb = Climb.find_by_id(params[:id])
+        # @climb = Climb.find_by_id(params[:id])
         unless !(@climb == nil)
             redirect_to climbs_path
         end 
@@ -40,9 +40,9 @@ class ClimbsController < ApplicationController
         params.require(:climb).permit(:name, :grade, :description, :location_id, location_attributes: [:name])
     end
 
-    # def find_climb
-    #     @climb = Climb.find_by(id: params[:id])
-    # end
+    def find_climb
+         @climb = Climb.find_by(id: params[:id])
+    end
 
 end
 

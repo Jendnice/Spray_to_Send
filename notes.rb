@@ -83,7 +83,6 @@ Review, Climb, Location
 - X Make login/signup pages more clear and user friendly. 
 - X Fix signup/login pages (mult. links for sign up with Github). And Sign Up button is a bit confusing.
 
-
 - Continue building out views and links for a more comprehensive and user-friendly interface (climb show views, etc.)
 - Based on what you build out in views, etc.: Update before_action (require_login and find method) in controllers
 - Update "stars" in views so it shows where needed, but pluralizes appropriately.
