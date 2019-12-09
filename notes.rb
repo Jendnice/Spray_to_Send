@@ -79,17 +79,16 @@ Review, Climb, Location
 - [x] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
 - [x] Include third party signup/login (how e.g. Devise/OmniAuth)
 - [x] Include form display of validation errors (form URL e.g. /recipes/new)
-    Figure out if coloring needs to show. (See Avi video or look up how to do it and add.)
+      X  Delete locations in database!
+- X Make login/signup pages more clear and user friendly. 
+- X Fix signup/login pages (mult. links for sign up with Github). And Sign Up button is a bit confusing.
 
-        Delete locations in database!
 
-- Make login/signup pages more clear and user friendly. (Once you sign up with Github you can use that as your login.
-    Make sure that is clear based on how it is laid out.)
-- Fix signup/login pages (mult. links for sign up with Github). And Sign Up button is a bit confusing.
 - Continue building out views and links for a more comprehensive and user-friendly interface (climb show views, etc.)
 - Based on what you build out in views, etc.: Update before_action (require_login and find method) in controllers
 - Update "stars" in views so it shows where needed, but pluralizes appropriately.
 - Some way to search for climbs, or have it search before creating new (first_or_create type thingy)
+- Add additional coloring for validation errors/messages if possible. (See Avi video or look up how to do it and add.)
 - Seed data
 
 - Add validations or other catches for uniqueness to avoid redundancy (ex. multiple climbs with same name)
@@ -117,34 +116,4 @@ Review, Climb, Location
 
 
 
-
-
-    <h1>Sign Up for Bingeworthy</h1>
-<p><%= button_to "Sign Up with Google", '/auth/google', class: "btn btn-outline-primary" %></p>
-<p>or enter in your details below:</p>
-
-<% if @user.errors.any? %>
-<div class="alert alert-danger" role="alert">
-  <ul>
-  <% @user.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-  <% end %>
-  </ul>
-</div>
-<% end %>
-
-<%= form_for @user do |f| %>
-  <strong><%= f.label :email %></strong> <%= f.text_field :email, class:"form-control" %><br>
-  <strong><%= f.label :username %></strong> <%= f.text_field :username, class:"form-control" %><br>
-  <strong><%= f.label :password %></strong> <%= f.password_field :password, class:"form-control" %><br>
-  <strong><%= f.label :password_confirmation %></strong> <%= f.password_field :password_confirmation, class:"form-control" %><br>
-  <%= f.submit "Create my account", class: "btn btn-primary" %>
-<% end %>
-
-<p>Already have an Account? <%= link_to "Log In", login_path %></p>
-
-
-<div>
-  <%= link_to "Sign up with Github", user_github_omniauth_authorize_path %>
-</div>
  

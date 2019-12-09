@@ -30,6 +30,9 @@ class ReviewsController < ApplicationController
 
     def show
         @review = Review.find_by_id(params[:id])
+        unless !(@review == nil)
+            redirect_to reviews_path
+        end 
     end
 
     private
