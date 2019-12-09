@@ -8,9 +8,12 @@ Rails.application.routes.draw do
   end 
 
   resources :locations
-  devise_for :users, :controllers => {registrations: 'registrations'}
+  
+  devise_for :users, :controllers => {registrations: 'registrations' }
+
   root to: 'application#welcome'
 
+  
 end
 
 

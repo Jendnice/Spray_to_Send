@@ -74,7 +74,7 @@ Review, Climb, Location
 
 -------------------------------------------------------------------
 
-- [] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
+- [x] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
 - [] Include third party signup/login (how e.g. Devise/OmniAuth)
 - [] Include form display of validation errors (form URL e.g. /recipes/new)
 
@@ -91,3 +91,9 @@ Review, Climb, Location
   </body>
 </html>
 
+rails g migration AddOmniauthToUsers provider:string uid:string
+rake db:migrate
+
+<div>
+    <%= link_to "Sign in with Github", user_github_omniauth_authorize_path %>
+  </div>
