@@ -77,6 +77,7 @@ Review, Climb, Location
 - [x] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
 - [] Include third party signup/login (how e.g. Devise/OmniAuth)
 - [] Include form display of validation errors (form URL e.g. /recipes/new)
+- Fix signup/login pages (mult. links for sign up with Github). And Sign Up button is a bit confusing.
 
 - Update "stars" in views so it shows where needed, but pluralizes appropriately.
 - Add validations or other catches for uniqueness to avoid redundancy (ex. multiple climbs with same name)
