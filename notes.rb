@@ -76,8 +76,6 @@ Review, Climb, Location
 
     #******* RECORD YOUR CODING SESSION!!!!! *********
 
-    # ********* Schedule Project Review *************
-
 - [x] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
 - [x] Include third party signup/login (how e.g. Devise/OmniAuth)
 
