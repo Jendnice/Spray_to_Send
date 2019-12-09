@@ -81,9 +81,10 @@ Review, Climb, Location
 - X Make login/signup pages more clear and user friendly. 
 - X Fix signup/login pages (mult. links for sign up with Github). And Sign Up button is a bit confusing.
 
-- Add search feature so users can search for reviews by climb (Ex. They search climb name and get all reviews for that climb)
-    In climb model:
-     scope :search, -> (query) { where("name LIKE ?", "%" + query + "%") }
+- X Add search feature so users can search for climbs by name
+   X In climb model:
+    X scope :search, -> (query) { where("name LIKE ?", "%" + query + "%") }
+- Additional seach features? (Ex. They search climb name and get all reviews for that climb)
 - Depending on search feature, maybe make it so only one climb of the same name can be input
 - Make it so only one location of same name can be input
 
