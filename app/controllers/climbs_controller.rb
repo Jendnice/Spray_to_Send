@@ -34,6 +34,11 @@ class ClimbsController < ApplicationController
         end 
     end
 
+    def search
+        @climbs = Climb.search(params[:query])
+        render :index
+    end
+
     private
 
     def climb_params

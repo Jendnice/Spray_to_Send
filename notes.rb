@@ -81,12 +81,23 @@ Review, Climb, Location
 - X Make login/signup pages more clear and user friendly. 
 - X Fix signup/login pages (mult. links for sign up with Github). And Sign Up button is a bit confusing.
 
+- Add search feature so users can search for reviews by climb (Ex. They search climb name and get all reviews for that climb)
+    In climb model:
+     scope :search, -> (query) { where("name LIKE ?", "%" + query + "%") }
+- Depending on search feature, maybe make it so only one climb of the same name can be input
+- Make it so only one location of same name can be input
+
+- /reviews needs some work - formatting, etc.
+- /climbs/1/reviews - see if above helps this. Can also organize this so it pulls the climb name once, and iterates through others.
+
+- Build out user home page with additional links and ease of navigation
 - Continue building out views and links for a more comprehensive and user-friendly interface (climb show views, etc.)
 - Based on what you build out in views, etc.: Update before_action (require_login and find method) in controllers
 - Some way to search for climbs, or have it search before creating new (first_or_create type thingy)
 - Add additional coloring for validation errors/messages if possible. (See Avi video or look up how to do it and add.)
 - Seed data
 
+- Update resources/routes so they only show what they use (ex. if you do not use edit, delete, etc., have the routes reflect that)
 - Add validations or other catches for uniqueness to avoid redundancy (ex. multiple climbs with same name)
 - Update collections in views to call on instance variable (define in controller), instead of calling on all in view (Ex. Climb.all)
 - Add another scope method (?) Make sure you completely understand the one you have in there! (Alphabetize?) Watch video.

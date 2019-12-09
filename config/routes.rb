@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   root to: 'application#welcome'
 
+  get '/search', to: 'climbs#search'
+
   
 end
 

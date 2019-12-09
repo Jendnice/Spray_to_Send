@@ -12,6 +12,8 @@ class Climb < ApplicationRecord
 
     scope :grouped_ratings, -> {left_joins(:reviews).group(:id).order('avg(stars) desc')}
 
+    scope :search, -> (query) { where("name LIKE ?", "%" + query + "%") }
+
 #write the scope method
 #custom route
 #controller method

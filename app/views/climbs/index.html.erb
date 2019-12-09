@@ -1,7 +1,14 @@
 <h1>Ready to send?</h1>
 
+    <%= form_tag("/search", method: "get") do %>
+    <%= label_tag :query, "Search by climb name:" %>
+    <%= text_field_tag :query, "", class:"form-control" %>
+    <%= submit_tag "Search", class: "btn btn-sm btn-secondary" %>
+    <% end %>
+
 <ul>
 <% @climbs.each do |c| %>
    <li> <h3> <%= link_to c.name, climb_path(c) %> - <%= c.grade %> - <%=c.description%></h3></li>
 <% end %>
 </ul>
+     
