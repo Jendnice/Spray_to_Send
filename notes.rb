@@ -37,9 +37,6 @@ To Dos:
 
 (see notes and project specs for all of it! :) )
 
-**RECORD your coding session at some point!**
-
---Schedule project review as soon as you can--
 
 X 1. Add additional models (review, climb, location) - as g resources (?)
    X 1a. include validations 
@@ -50,9 +47,9 @@ X 4. Add/update views (include partials)
   X 4a. Include a user submittable attribute on the through (the "Reviews")
   X 4b. Build a nested resource (see notes)
 
-5. Build scope method that is chainable and has url to see working feature (see notes)
-7. Third party authentiction through Devise/Omniauth - Github (or Google)
-8. Error messages (see notes) - do have error messages, but might need to fine-tune or add the red box around the form fields 
+X 5. Build scope method that is chainable and has url to see working feature (see notes)
+X 7. Third party authentiction through Devise/Omniauth - Github (or Google)
+X 8. Error messages (see notes) - do have error messages, but might need to fine-tune or add the red box around the form fields 
 9. Template design and updates
 10. DRY code (see spec points about this)
   10a. Helper methods 
@@ -84,11 +81,13 @@ Review, Climb, Location
 - X Add search feature so users can search for climbs by name
    X In climb model:
     X scope :search, -> (query) { where("name LIKE ?", "%" + query + "%") }
-- Additional seach features? (Ex. They search climb name and get all reviews for that climb)
-- Depending on search feature, maybe make it so only one climb of the same name can be input
-- Make it so only one location of same name can be input
 
-- /reviews needs some work - formatting, etc.
+- X Make it so only one location of same name can be input
+
+- Add search feature like location to add new climb form so users can search for a climb (hopefully minimze duplicates)
+- Build out user show page for when someone signs up or logs in! (Remember you can build a partial and render that in the Devise views)
+- "The Spray-down" on climb show pages (climbs/1) should link the climb reviews (climbs/1/reviews), not all reviews (/reviews)
+- /reviews needs some work - formatting, links, etc.
 - /climbs/1/reviews - see if above helps this. Can also organize this so it pulls the climb name once, and iterates through others.
 
 - Build out user home page with additional links and ease of navigation
@@ -97,6 +96,8 @@ Review, Climb, Location
 - Some way to search for climbs, or have it search before creating new (first_or_create type thingy)
 - Add additional coloring for validation errors/messages if possible. (See Avi video or look up how to do it and add.)
 - Seed data
+- Additional seach features? (Ex. They search climb name and get all reviews for that climb)
+- Depending on search feature, maybe make it so only one climb of the same name can be input
 
 - Update resources/routes so they only show what they use (ex. if you do not use edit, delete, etc., have the routes reflect that)
 - Add validations or other catches for uniqueness to avoid redundancy (ex. multiple climbs with same name)
