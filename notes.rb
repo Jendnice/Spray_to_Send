@@ -89,6 +89,7 @@ Review, Climb, Location
 - Continue building out views and links for a more comprehensive and user-friendly interface (climb show views, etc.)
 - Based on what you build out in views, etc.: Update before_action (require_login and find method) in controllers
 - Update "stars" in views so it shows where needed, but pluralizes appropriately.
+- Some way to search for climbs, or have it search before creating new (first_or_create type thingy)
 - Seed data
 
 - Add validations or other catches for uniqueness to avoid redundancy (ex. multiple climbs with same name)
@@ -97,30 +98,11 @@ Review, Climb, Location
 - See list and specs for additionals
 - template! :)
 
-
+<%= render "devise/shared/links" %>
 
 <div>
     <%= link_to "Sign in with Github", user_github_omniauth_authorize_path %>
 </div>
-
-
-
-<% if @climb.reviews.present?  %>
-    <%= link_to "The Spray-down", reviews_path %> </br>
-    <%= link_to "Add Spray", new_review_path %>
-    <%= link_to "Review this climb", new_climb_review_path(@climb)%>
-    <% else %>
-    <%= link_to "The Spray-down", new_review_path %>
-    <% end %>
-    <% end %>
-
-<body>
-    <% if @climb %>
-    <h1> Add a review for <%=@climb.location.name%> - <%= @climb.name %>!</h1> 
-<% else %>
-    <h1> Add a review! </h1>
-<% end %>
- </body>
     
 
 # In app/views/climbs/_form  integrate something like this (uses alphabetize?):
@@ -132,3 +114,37 @@ Review, Climb, Location
         <%= climb_fields.text_field :name %>
         <% end %>
     </div>
+
+
+
+
+
+    <h1>Sign Up for Bingeworthy</h1>
+<p><%= button_to "Sign Up with Google", '/auth/google', class: "btn btn-outline-primary" %></p>
+<p>or enter in your details below:</p>
+
+<% if @user.errors.any? %>
+<div class="alert alert-danger" role="alert">
+  <ul>
+  <% @user.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+</div>
+<% end %>
+
+<%= form_for @user do |f| %>
+  <strong><%= f.label :email %></strong> <%= f.text_field :email, class:"form-control" %><br>
+  <strong><%= f.label :username %></strong> <%= f.text_field :username, class:"form-control" %><br>
+  <strong><%= f.label :password %></strong> <%= f.password_field :password, class:"form-control" %><br>
+  <strong><%= f.label :password_confirmation %></strong> <%= f.password_field :password_confirmation, class:"form-control" %><br>
+  <%= f.submit "Create my account", class: "btn btn-primary" %>
+<% end %>
+
+<p>Already have an Account? <%= link_to "Log In", login_path %></p>
+
+
+<div>
+  <%= link_to "Sign up with Github", user_github_omniauth_authorize_path %>
+</div>
+ 
