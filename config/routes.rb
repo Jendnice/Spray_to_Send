@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :reviews
   resources :climbs do
-    resources :reviews, only: [:new, :index]
+    resources :reviews, only: [:new, :show, :index]
   end 
 
   resources :locations

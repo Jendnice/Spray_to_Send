@@ -78,20 +78,22 @@ Review, Climb, Location
 
 - [x] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
 - [x] Include third party signup/login (how e.g. Devise/OmniAuth)
-
-- [] Include form display of validation errors (form URL e.g. /recipes/new)
+- [x] Include form display of validation errors (form URL e.g. /recipes/new)
     Figure out if coloring needs to show. (See Avi video or look up how to do it and add.)
 
-- Seed data
+        Delete locations in database!
+
 - Make login/signup pages more clear and user friendly. (Once you sign up with Github you can use that as your login.
     Make sure that is clear based on how it is laid out.)
 - Fix signup/login pages (mult. links for sign up with Github). And Sign Up button is a bit confusing.
-
-- Update "stars" in views so it shows where needed, but pluralizes appropriately.
-- Add validations or other catches for uniqueness to avoid redundancy (ex. multiple climbs with same name)
 - Continue building out views and links for a more comprehensive and user-friendly interface (climb show views, etc.)
 - Based on what you build out in views, etc.: Update before_action (require_login and find method) in controllers
+- Update "stars" in views so it shows where needed, but pluralizes appropriately.
+- Seed data
+
+- Add validations or other catches for uniqueness to avoid redundancy (ex. multiple climbs with same name)
 - Update collections in views to call on instance variable (define in controller), instead of calling on all in view (Ex. Climb.all)
+- Add another scope method (?) Make sure you completely understand the one you have in there! (Alphabetize?) Watch video.
 - See list and specs for additionals
 - template! :)
 
@@ -100,3 +102,33 @@ Review, Climb, Location
 <div>
     <%= link_to "Sign in with Github", user_github_omniauth_authorize_path %>
 </div>
+
+
+
+<% if @climb.reviews.present?  %>
+    <%= link_to "The Spray-down", reviews_path %> </br>
+    <%= link_to "Add Spray", new_review_path %>
+    <%= link_to "Review this climb", new_climb_review_path(@climb)%>
+    <% else %>
+    <%= link_to "The Spray-down", new_review_path %>
+    <% end %>
+    <% end %>
+
+<body>
+    <% if @climb %>
+    <h1> Add a review for <%=@climb.location.name%> - <%= @climb.name %>!</h1> 
+<% else %>
+    <h1> Add a review! </h1>
+<% end %>
+ </body>
+    
+
+# In app/views/climbs/_form  integrate something like this (uses alphabetize?):
+
+    <div class="form-group">
+        <strong><%= f.label :climb %></strong><br>
+        <%= f.collection_select :climb_id, alphebetize(Climb.all), :id, :name, :include_blank => true%> or new:
+        <%= f.fields_for :climb_attributes do |climb_fields| %>
+        <%= climb_fields.text_field :name %>
+        <% end %>
+    </div>

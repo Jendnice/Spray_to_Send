@@ -27,6 +27,10 @@ class ClimbsController < ApplicationController
         @climbs = Climb.grouped_ratings
     end
 
+    def show
+        @climb = Climb.find_by_id(params[:id])
+    end
+
 
     private
 

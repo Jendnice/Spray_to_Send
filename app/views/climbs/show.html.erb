@@ -1,0 +1,21 @@
+<h1>The Climb:</h1>
+
+<h2><%= @climb.name %></h2>
+
+<h3><%= @climb.grade %></h3>
+
+<p><%= @climb.description%> </p>
+
+
+<% if @climb.reviews.present? %>
+    <%= link_to "The Spray-down", reviews_path %> </br>
+    <%= link_to "Add Spray", new_climb_review_path(@climb)%>
+<% else %>
+    <%= link_to "Add Spray", new_climb_review_path(@climb)%>
+<% end %>
+
+
+
+
+
+
