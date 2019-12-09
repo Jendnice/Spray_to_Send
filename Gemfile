@@ -25,6 +25,7 @@ gem 'pry'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-github'
+gem 'dotenv-rails'
 
 
 # Use Active Storage variant
