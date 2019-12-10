@@ -5,7 +5,7 @@ class ClimbsController < ApplicationController
    
 
     def index
-        @climbs = Climb.all
+        @climbs = Climb.all.alphabetical_order
     end
 
     def new

@@ -6,6 +6,7 @@ class ReviewsController < ApplicationController
         if find_climb
             @reviews = @climb.reviews.all
         else
+            @climbs = Climb.all.alphabetical_order
             @reviews = Review.all
         end   
 

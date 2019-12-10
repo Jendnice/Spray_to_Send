@@ -109,11 +109,7 @@ Review, Climb, Location
 - See list and specs for additionals
 - template! :)
 
-<%= render "devise/shared/links" %>
 
-<div>
-    <%= link_to "Sign in with Github", user_github_omniauth_authorize_path %>
-</div>
     
 
 # In app/views/climbs/_form  integrate something like this (uses alphabetize?): (Also in reviews view!)
@@ -128,30 +124,6 @@ Review, Climb, Location
 
 
 
-# climbs index before updating: 
-
-<% if @climb %>
-<h1> The full spray-down for <%= @climb.name %>!</h1>
-    <h2> Location: <%= @climb.location.name %></h2>
-<% else %>
-    <h1> All the spray! </h1>
-<% end %>
-
-<% if @reviews.present? %>
-<ul>
-<h3> Reviews: </h3> 
-<% @reviews.each do |r| %>
-    <li> <h4> <%= r.climb.name %> - <%= r.title %> - <%= pluralize(r.stars, "star") %> </h4> </li>
-    <p> <%= r.content %> </p>
-<% end %>
-<ul>
-<% else %>
-<p> Be the change. Add the first review. </p>
-<%= link_to "Add Spray", new_climb_review_path(@climb)%>
-<% end %>
-
-
-----------------------------------------------------------------------------------
 
 current welcome page - all welcome page; links adjusted if user logged in
 
@@ -171,5 +143,4 @@ Site options breakdown:
         See a review - send
     See grouped ratings for climbs - send
     Search for a climb - either (more send)
-
 

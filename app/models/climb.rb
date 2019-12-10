@@ -21,9 +21,10 @@ class Climb < ApplicationRecord
 
 
 
-    #   def self.alphabetical_order
-    #     order(:name)
-    #   end
+    def self.alphabetical_order
+        order(:name)
+    end
+    
 
     def location_attributes=(location_attributes)
         location_name = location_attributes["name"]
