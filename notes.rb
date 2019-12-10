@@ -84,16 +84,18 @@ Review, Climb, Location
 
 - X Make it so only one location of same name can be input
 
-- Add search feature like location to add new climb form so users can search for a climb (hopefully minimze duplicates)
-- Build out user show page for when someone signs up or logs in! (Remember you can build a partial and render that in the Devise views)
+
+- Build out user home/show page for when someone signs up or logs in! (Remember you can build a partial and render that in the Devise views)
 - "The Spray-down" on climb show pages (climbs/1) should link the climb reviews (climbs/1/reviews), not all reviews (/reviews)
 - /reviews needs some work - formatting, links, etc.
+- Add alphabetize to reviews index, and maybe to search climbs form (see below for further explanation)
 - /climbs/1/reviews - see if above helps this. Can also organize this so it pulls the climb name once, and iterates through others.
+- Maybe create partial for reviews index to minimize redundant code (think about what makes most sense, only view that uses it)
 
-- Build out user home page with additional links and ease of navigation
+- Build out main home/welcome page with additional links (?) and ease of navigation (might be mostly formatting)
 - Continue building out views and links for a more comprehensive and user-friendly interface (climb show views, etc.)
 - Based on what you build out in views, etc.: Update before_action (require_login and find method) in controllers
-- Some way to search for climbs, or have it search before creating new (first_or_create type thingy)
+- Make sure link to search for climbs is readily accessible so users check there easily before creating redundant climbs
 - Add additional coloring for validation errors/messages if possible. (See Avi video or look up how to do it and add.)
 - Seed data
 - Additional seach features? (Ex. They search climb name and get all reviews for that climb)
@@ -114,7 +116,7 @@ Review, Climb, Location
 </div>
     
 
-# In app/views/climbs/_form  integrate something like this (uses alphabetize?):
+# In app/views/climbs/_form  integrate something like this (uses alphabetize?): (Also in reviews view!)
 
     <div class="form-group">
         <strong><%= f.label :climb %></strong><br>
@@ -123,6 +125,30 @@ Review, Climb, Location
         <%= climb_fields.text_field :name %>
         <% end %>
     </div>
+
+
+
+# climbs index before updating: 
+
+<% if @climb %>
+<h1> The full spray-down for <%= @climb.name %>!</h1>
+    <h2> Location: <%= @climb.location.name %></h2>
+<% else %>
+    <h1> All the spray! </h1>
+<% end %>
+
+<% if @reviews.present? %>
+<ul>
+<h3> Reviews: </h3> 
+<% @reviews.each do |r| %>
+    <li> <h4> <%= r.climb.name %> - <%= r.title %> - <%= pluralize(r.stars, "star") %> </h4> </li>
+    <p> <%= r.content %> </p>
+<% end %>
+<ul>
+<% else %>
+<p> Be the change. Add the first review. </p>
+<%= link_to "Add Spray", new_climb_review_path(@climb)%>
+<% end %>
 
 
 
