@@ -91,6 +91,8 @@ Review, Climb, Location
 - Add alphabetize to reviews index, and maybe to search climbs form (see below for further explanation)
 - /climbs/1/reviews - see if above helps this. Can also organize this so it pulls the climb name once, and iterates through others.
 - Maybe create partial for reviews index to minimize redundant code (think about what makes most sense, only view that uses it)
+- Add edit/update to climbs, maybe edit/update to reviews (but it would need to be only for who wrote it, which might get complicated)
+    - Consider whether delete should be anywhere (likely reviews if anything, but same issue as above)
 
 - Build out main home/welcome page with additional links (?) and ease of navigation (might be mostly formatting)
 - Continue building out views and links for a more comprehensive and user-friendly interface (climb show views, etc.)
@@ -151,6 +153,14 @@ Review, Climb, Location
 <% end %>
 
 
+current welcome page - all welcome page; links adjusted if user logged in
+
+welcome page - overall welcome page; links/view adjusted if user logged in
+home page - user's home page 
 
 
+<% if user_signed_in? %>
+<h1> <%= link_to "Home", root_path %></h1>
+<h2> hello <%= @user.username %>!</h2>
+<% end %>
  

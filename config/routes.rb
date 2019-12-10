@@ -15,7 +15,10 @@ Rails.application.routes.draw do
     delete 'sign_out', :to => 'devise/sessions#destroy'
   end
 
+  # root to: 'application#welcome'
+
   root to: 'application#welcome'
+  get 'home', to: 'application#home'
 
   get '/search', to: 'climbs#search'
 
