@@ -84,13 +84,9 @@ Review, Climb, Location
 
 - X Make it so only one location of same name can be input
 
-
-- /reviews needs some work - formatting, links, etc.
-- /climbs/1/reviews - see if above helps this. Can also organize this so it pulls the climb name once, and iterates through others.
-- Maybe create partial for reviews index to minimize redundant code (think about what makes most sense, only view that uses it)
-- Add edit/update to climbs, maybe edit/update to reviews (but it would need to be only for who wrote it, which might get complicated)
+- Add edit/update to reviews (but it would need to be only for who wrote it, which might get complicated)
     - Consider whether delete should be anywhere (likely reviews if anything, but same issue as above)
-
+- Look into scope methods (read article) and make sure what you have applies
 - Adjust error boxes so they apply to dropdown boxes, and text areas too (not just text fields)
 - Build out main home/welcome page with additional links (?) and ease of navigation (might be mostly formatting)
 - Continue building out views and links for a more comprehensive and user-friendly interface (climb show views, etc.)

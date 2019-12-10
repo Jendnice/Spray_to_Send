@@ -1,5 +1,5 @@
 <% if @climb %>
-    <h1> The full spray-down for <%= @climb.name %>!</h1>
+    <h1> Full Spray-down for <i><%= @climb.name %></i>!</h1>
         <h2> Location: <%= @climb.location.name %></h2>
         <% if @reviews.present? %>
             <ul>
@@ -8,7 +8,8 @@
             <li> <h4> <%= r.title %> - <%= pluralize(r.stars, "star") %> </h4> </li>
             <p> <%= r.content %> </p>
         <% end %>
-            <ul>
+            <ul> </br>
+            <%= link_to "Add Spray", new_climb_review_path(@climb)%>
         <% else %>
         <p> Be the change. Add the first review. </p>
         <%= link_to "Add Spray", new_climb_review_path(@climb) %>
@@ -21,7 +22,7 @@
                 <%  if c.reviews.present? %>
                 <ul>
                   <% c.reviews.each do |r| %>
-                     <li> <h4> <%= link_to r.climb.name, climb_path(c) %> - <%= r.title %> - <%= pluralize(r.stars, "star") %> </h4> </li>
+                     <li> <h4> <%= link_to r.climb.name, review_path(r) %> - <%= r.title %> - <%= pluralize(r.stars, "star") %> </h4> </li>
                      <p> <%= r.content %> </p>
                   <% end %>
                 </ul>

@@ -1,7 +1,7 @@
 class ClimbsController < ApplicationController
 
     before_action :require_login
-    before_action :find_climb, only: [:show, :edit, :update]
+    before_action :find_climb, only: [:show]
    
 
     def index
@@ -25,15 +25,15 @@ class ClimbsController < ApplicationController
         end
     end
 
-    def ratings
-        @climbs = Climb.grouped_ratings
-    end
-
     def show
         # @climb = Climb.find_by_id(params[:id])
         unless !(@climb == nil)
             redirect_to climbs_path
         end 
+    end
+
+    def ratings
+        @climbs = Climb.grouped_ratings
     end
 
     def search
@@ -53,19 +53,3 @@ class ClimbsController < ApplicationController
 
 end
 
-
-
-# get "/climb_interests/:id" do 
-#     redirect_if_not_logged_in
-#     @climb = climbInterest.find_by_id(params[:id])
-    
-#      unless !(@climb == nil)
-#       redirect "/climb_interests"
-#      end 
-     
-#       if @climb.user == current_user
-#         erb :"/climb_interests/show"
-#       else 
-#         redirect to "/climb_interests"
-#       end 
-#   end

@@ -1,10 +1,10 @@
 <h1>The Climb:</h1>
 
-<h2><%= @climb.name %></h2>
+<h2><i><%= @climb.name %></i></h2>
 
-<h3><%= @climb.grade %></h3>
+<h3>Grade: <%= @climb.grade %></h3>
 
-<p><%= @climb.description%> </p>
+<p>Description: <%= @climb.description%> </p>
 
 
 <% if @climb.reviews.present? %>

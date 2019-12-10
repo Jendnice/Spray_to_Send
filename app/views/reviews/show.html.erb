@@ -1,12 +1,20 @@
-<h1><%= @review.climb.name %></h1>
+<h1>The Spray:</h1>
 
-<h2><%= @review.title %></h2> 
+<h2><i><%= @review.climb.name %> </i></h2>
+
+<h3><%= @review.title %></h3> 
 
 <h3><% if @review.stars.present? %>
 <%= pluralize(@review.stars, "star") %>
 <% end %></h3>   
 
 <p><%= @review.content %> </p>
+
+
+<%= link_to "The Climb", climb_path(@review.climb) %> </br>
+<%= link_to "The Spray-down", climb_reviews_path(@review.climb) %> </br>
+<%= link_to "Add Spray", new_climb_review_path(@review.climb)%>
+
 
 
 
