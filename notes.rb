@@ -85,8 +85,6 @@ Review, Climb, Location
 - X Make it so only one location of same name can be input
 
 
-- Build out user home/show page for when someone signs up or logs in! (Remember you can build a partial and render that in the Devise views)
-- "The Spray-down" on climb show pages (climbs/1) should link the climb reviews (climbs/1/reviews), not all reviews (/reviews)
 - /reviews needs some work - formatting, links, etc.
 - Add alphabetize to reviews index, and maybe to search climbs form (see below for further explanation)
 - /climbs/1/reviews - see if above helps this. Can also organize this so it pulls the climb name once, and iterates through others.
@@ -153,28 +151,25 @@ Review, Climb, Location
 <% end %>
 
 
+----------------------------------------------------------------------------------
+
 current welcome page - all welcome page; links adjusted if user logged in
 
 welcome page - overall welcome page; links/view adjusted if user logged in
 home page - user home page 
 
 
-<% if user_signed_in? %>
-<h1> <%= link_to "Home", root_path %></h1>
-<h2> hello <%= @user.username %>!</h2>
-<% end %>
+Site options breakdown:
+    Add a new climb  - spray
+    Add a new review  - spray
+    See all climbs  - send
+        See a climb  - send
+        See a climb's total reviews' - send
+        See a climb's individual review ' - send
+        Add a new review through a climb - spray
+    See all reviews - send
+        See a review - send
+    See grouped ratings for climbs - send
+    Search for a climb - either (more send)
 
 
-
-
-Add a new climb  - spray
-Add a new review  - spray
-See all climbs  - send
-    See a climb  - send
-    See a climb's total reviews' - send
-    See a climb's individual review ' - send
-    Add a new review through a climb - spray
-See all reviews - send
-    See a review - send
-See grouped ratings for climbs - send
-Search for a climb - either (more send)

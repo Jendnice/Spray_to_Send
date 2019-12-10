@@ -8,7 +8,7 @@
 
 
 <% if @climb.reviews.present? %>
-    <%= link_to "The Spray-down", reviews_path %> </br>
+    <%= link_to "The Spray-down", climb_reviews_path(@climb) %> </br>
     <%= link_to "Add Spray", new_climb_review_path(@climb)%>
 <% else %>
     <%= link_to "Add Spray", new_climb_review_path(@climb)%>
