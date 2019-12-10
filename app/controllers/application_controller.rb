@@ -1,6 +1,12 @@
 class ApplicationController < ActionController::Base
 
+  helper_method :current_user
+
     def home 
+      require_login 
+      if current_user && !(current_user.username.present?)
+        current_user.username = current_user.email
+      end
     end 
 
     def welcome

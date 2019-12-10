@@ -156,11 +156,25 @@ Review, Climb, Location
 current welcome page - all welcome page; links adjusted if user logged in
 
 welcome page - overall welcome page; links/view adjusted if user logged in
-home page - user's home page 
+home page - user home page 
 
 
 <% if user_signed_in? %>
 <h1> <%= link_to "Home", root_path %></h1>
 <h2> hello <%= @user.username %>!</h2>
 <% end %>
- 
+
+
+
+
+Add a new climb  - spray
+Add a new review  - spray
+See all climbs  - send
+    See a climb  - send
+    See a climb's total reviews' - send
+    See a climb's individual review ' - send
+    Add a new review through a climb - spray
+See all reviews - send
+    See a review - send
+See grouped ratings for climbs - send
+Search for a climb - either (more send)

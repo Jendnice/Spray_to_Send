@@ -1,1 +1,19 @@
-<h1> User's home page (logged in) </h1>
+<h1> Hey, <%= current_user.username %>! Time to crush!</h1>
+
+<h2>What do you want to do today?</h2>
+
+   <body>
+<h3> Spray: </h3>
+    <ul>
+    <li> <%= link_to "Add a new climb", new_climb_path %> </li>
+    <li> <%= link_to "Add a new review", new_review_path %> </li>
+    </ br>
+<h3> Send: </h3>
+    <li> <%= link_to "See all climbs", climbs_path %> </li>
+    <li> <%= link_to "See all reviews", reviews_path %> </li>
+    <li> <%= link_to "See grouped ratings", climbs_grouped_ratings_path %> </li>
+<h3> Still deciding? </h3>
+    <li> <%= link_to "Search for a climb to send or spray", climbs_path %> </li>
+    <ul>
+</body>
+    
