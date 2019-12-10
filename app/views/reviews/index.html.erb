@@ -21,7 +21,7 @@
                 <%  if c.reviews.present? %>
                 <ul>
                   <% c.reviews.each do |r| %>
-                     <li> <h4> <%= r.climb.name %> - <%= r.title %> - <%= pluralize(r.stars, "star") %> </h4> </li>
+                     <li> <h4> <%= link_to r.climb.name, climb_path(c) %> - <%= r.title %> - <%= pluralize(r.stars, "star") %> </h4> </li>
                      <p> <%= r.content %> </p>
                   <% end %>
                 </ul>

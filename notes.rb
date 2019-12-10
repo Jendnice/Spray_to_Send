@@ -86,7 +86,6 @@ Review, Climb, Location
 
 
 - /reviews needs some work - formatting, links, etc.
-- Add alphabetize to reviews index, and maybe to search climbs form (see below for further explanation)
 - /climbs/1/reviews - see if above helps this. Can also organize this so it pulls the climb name once, and iterates through others.
 - Maybe create partial for reviews index to minimize redundant code (think about what makes most sense, only view that uses it)
 - Add edit/update to climbs, maybe edit/update to reviews (but it would need to be only for who wrote it, which might get complicated)
@@ -107,21 +106,9 @@ Review, Climb, Location
 - Update collections in views to call on instance variable (define in controller), instead of calling on all in view (Ex. Climb.all)
 - Add another scope method (?) Make sure you completely understand the one you have in there! (Alphabetize?) Watch video.
     -Something like this for a search: scope :search, -> (query) { where("name LIKE ?", "%" + query + "%") }
+- Clean up code (ex. having alphabetize method in both climb and location models. Is there a better way to do this?)
 - See list and specs for additionals
 - template! :)
-
-
-    
-
-# In app/views/climbs/_form  integrate something like this (uses alphabetize?): (Also in reviews view!)
-
-    <div class="form-group">
-        <strong><%= f.label :climb %></strong><br>
-        <%= f.collection_select :climb_id, alphebetize(Climb.all), :id, :name, :include_blank => true%> or new:
-        <%= f.fields_for :climb_attributes do |climb_fields| %>
-        <%= climb_fields.text_field :name %>
-        <% end %>
-    </div>
 
 
 
