@@ -92,6 +92,7 @@ Review, Climb, Location
 - Add edit/update to climbs, maybe edit/update to reviews (but it would need to be only for who wrote it, which might get complicated)
     - Consider whether delete should be anywhere (likely reviews if anything, but same issue as above)
 
+- Adjust error boxes so they apply to dropdown boxes, and text areas too (not just text fields)
 - Build out main home/welcome page with additional links (?) and ease of navigation (might be mostly formatting)
 - Continue building out views and links for a more comprehensive and user-friendly interface (climb show views, etc.)
 - Based on what you build out in views, etc.: Update before_action (require_login and find method) in controllers

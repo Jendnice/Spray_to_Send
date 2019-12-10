@@ -4,4 +4,8 @@ class Location < ApplicationRecord
     
     validates :name, presence: true
 
+    def self.alphabetical_order
+        order(:name)
+    end
+
 end

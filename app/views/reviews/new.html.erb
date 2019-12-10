@@ -4,14 +4,14 @@
 <% else %>
     <h1> Add spray! </h1>
 <% end %>
-
+ 
 <%= form_for(@review) do |f| %>
 <% if params[:climb_id] %>
     <%= f.hidden_field :climb_id %>
 <% else %>
     <div>
         <%= f.label :climb_id, "Select a climb!" %>
-        <%= f.collection_select :climb_id, Climb.all, :id, :name, include_blank: true %>
+        <%= f.collection_select :climb_id, @climbs, :id, :name, include_blank: true %>
     </div>
     <% end %>
 <div>

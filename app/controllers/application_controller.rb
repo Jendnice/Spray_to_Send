@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-  helper_method :current_user, :self.alphabetical_order
+  helper_method :current_user
 
     def home 
       require_login 

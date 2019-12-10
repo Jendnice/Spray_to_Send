@@ -17,7 +17,7 @@
 
 <p>Please select a location:</p>
 <div>
-    <%= f.collection_select :location_id, Location.all, :id, :name, include_blank: "Pick one" %>
+    <%= f.collection_select :location_id, @locations, :id, :name, include_blank: "Pick one" %>
 </div>
 
 <p>or, create a new location!</p>

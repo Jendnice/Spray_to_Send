@@ -11,6 +11,7 @@ class ClimbsController < ApplicationController
     def new
         @climb = Climb.new
         @climb.build_location
+        @locations = Location.all.alphabetical_order
     end
 
     def create
@@ -19,6 +20,7 @@ class ClimbsController < ApplicationController
             redirect_to climbs_path
         else
             @climb.build_location
+            @locations = Location.all.alphabetical_order
             render :new
         end
     end

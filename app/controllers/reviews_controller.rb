@@ -16,6 +16,7 @@ class ReviewsController < ApplicationController
         if find_climb
             @review = @climb.reviews.build
         else
+            @climbs = Climb.all.alphabetical_order
             @review = Review.new
         end    
     end
@@ -26,6 +27,7 @@ class ReviewsController < ApplicationController
             flash[:message] = "Thanks for the spray!"
             redirect_to review_path(@review)
         else
+            @climbs = Climb.all.alphabetical_order
             render :new
         end
     end
