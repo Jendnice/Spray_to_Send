@@ -16,6 +16,10 @@
 <%= link_to "Add Spray", new_climb_review_path(@review.climb)%> </br>
 <%= link_to "Edit Spray", edit_review_path(@review)%>
 
+<%= form_for @review, method: :delete do |f| %> </br>
+    <%= f.submit "Delete", class:"btn btn-sm btn-danger btn-block" %>
+<% end %>
+
 
 
 

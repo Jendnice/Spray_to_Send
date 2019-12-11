@@ -1,12 +1,12 @@
 class ReviewsController < ApplicationController
 
     before_action :require_login
-    before_action :find_review, only: [:show, :edit, :update]
-    before_action :created_by_current_user, only: [:edit, :update]
+    before_action :find_review, only: [:show, :edit, :update, :destroy]
+    before_action :created_by_current_user, only: [:edit, :update, :destroy]
 
     def index
         if find_climb
-            @reviews = @climb.reviews.all
+            @reviews = @climb.reviews.all  
         else
             @climbs = Climb.all.alphabetical_order
             @reviews = Review.all
@@ -41,6 +41,12 @@ class ReviewsController < ApplicationController
         end 
     end
 
+    def show
+        unless !(@review == nil)
+            redirect_to reviews_path
+        end  
+    end 
+
     def edit
         @climbs = Climb.all.alphabetical_order
     end
@@ -62,6 +68,17 @@ class ReviewsController < ApplicationController
        end
     end
 
+    def destroy
+        if @review
+          @review.destroy
+          flash[:message] = "The spray has been removed!"
+          redirect_to reviews_path
+        else
+          flash[:danger] = "The spray could not be removed!"
+          redirect_to review_path(@review)
+        end
+    end
+
     private
 
     def review_params
@@ -78,7 +95,7 @@ class ReviewsController < ApplicationController
 
     def created_by_current_user
         unless @review.user_id == current_user.id
-          flash[:danger] = "You cannot edit this spray because you did not create it!"
+          flash[:danger] = "You cannot change or remove this spray because you did not create it!"
           redirect_to review_path(@review)
         end
     end
