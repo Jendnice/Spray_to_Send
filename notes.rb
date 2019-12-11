@@ -83,8 +83,7 @@ Review, Climb, Location
     X scope :search, -> (query) { where("name LIKE ?", "%" + query + "%") }
 - X Make it so only one location of same name can be input
 
-- template! :)
-- Build out main home/welcome page with additional links (?) and ease of navigation (might be mostly formatting)
+- Check out main home/welcome page links and ease of navigation
 - Continue building out views and links for a more comprehensive and user-friendly interface (climb show views, etc.)
     (See below list for all options and make sure they are included where needed.)
 
