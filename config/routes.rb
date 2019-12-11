@@ -6,8 +6,6 @@ Rails.application.routes.draw do
   resources :climbs do
     resources :reviews, only: [:new, :show, :index]
   end 
-
-  resources :locations
   
   devise_for :users, :controllers => { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'registrations' }
   
@@ -19,6 +17,12 @@ Rails.application.routes.draw do
   get 'home', to: 'application#home'
 
   get '/search', to: 'climbs#search'
+
+  get '/locations', to: 'application#welcome'
+
+  resources :locations
+
+  get '*path', to: 'application#welcome'
 
   
 end

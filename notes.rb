@@ -95,7 +95,7 @@ Review, Climb, Location
 - Based on what you build out in views, etc.: Update before_action (require_login and find_ method) in controllers
 - Adjust error boxes so they apply to dropdown boxes if possible. (See Avi video or look up how to do it and add.)
 - Additional seach features? (Ex. They search climb name and get all reviews for that climb)
-- Delete test climb
+- Delete test climb, test review, test location (add seed data if needed)
 - Update resources/routes so they only show what they use (ex. if you do not use edit, delete, etc., have the routes reflect that)
 - Clean up code (ex. having alphabetize method in both climb and location models. Is there a better way to do this?,
     update method in reviews controller, etc.)
@@ -114,19 +114,19 @@ home page - user home page
 
 
 Site options breakdown:
-    Add a new climb  - spray 
-    Add a new review  - spray
-    Edit a climb review - spray
-    (Delete a climb review) - spray
-    See all climbs  - send
-        See a climb  - send
-        See a climb's total reviews' - send
-        See a climb's individual review ' - send
-        Add a new review through a climb - spray
-    See all reviews - send
-        See a review - send
-    See grouped ratings for climbs - send
-    Search for a climb - either (more send)
+   X Add a new climb  - spray 
+   X Add a new review  - spray
+   X Edit a climb review - spray
+   X (Delete a climb review) - spray
+  X  See all climbs  - send
+    X    See a climb  - send
+    X    See a climb's total reviews' - send
+      X  See a climb's individual review ' - send
+    X    Add a new review through a climb - spray
+  X  See all reviews - send
+ X       See a review - send
+  X  See grouped ratings for climbs - send
+  X  Search for a climb - either (more send)
 
 
 

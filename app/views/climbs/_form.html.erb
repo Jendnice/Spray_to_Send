@@ -13,18 +13,15 @@
 <div>
     <%= f.label :description %>
     <%= f.text_field :description %>
+    </ br>
 </div> 
 
-<p>Please select a location:</p>
-<div>
-    <%= f.collection_select :location_id, @locations, :id, :name, include_blank: "Pick one" %>
-</div>
+<p>Please select a location: <%= f.collection_select :location_id, @locations, :id, :name, include_blank: "Pick one" %></p>
 
-<p>or, create a new location!</p>
-<%= f.fields_for :location do |l| %>
-    <%= l.label :name %>
+<p>Or create a new location:
+<%= f.fields_for :location do |l| %></br>
     <%= l.text_field :name %>
-<% end %>
+<% end %></p>
 <br />
 <%= f.submit %>
 
