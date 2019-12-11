@@ -83,8 +83,9 @@ Review, Climb, Location
     X scope :search, -> (query) { where("name LIKE ?", "%" + query + "%") }
 - X Make it so only one location of same name can be input
 
-- Add edit link to review show page
-- Link to ratings page and grouped_ratings page where appropriate (and update content/formatting in them if needed)
+
+- Link to ratings page and grouped_ratings page where appropriate (and update content/formatting on ratings page)
+    climbs_grouped_ratings_path   (Make sure /ratings and "grouped_ratings" work ccorrectly)
 - Look into scope methods (read article) and make sure what you have applies
 - Build out main home/welcome page with additional links (?) and ease of navigation (might be mostly formatting)
 - Continue building out views and links for a more comprehensive and user-friendly interface (climb show views, etc.)
