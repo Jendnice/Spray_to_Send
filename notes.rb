@@ -84,25 +84,22 @@ Review, Climb, Location
 
 - X Make it so only one location of same name can be input
 
-- Add edit/update to reviews (but it would need to be only for who wrote it, which might get complicated)
-    - Consider whether delete should be anywhere (likely reviews if anything, but same issue as above)
+- Build partial for reviews new and edit forms 
+- Add edit link to review show page
+- Link to ratings page and grouped_ratings page where appropriate (and update content/formatting in them if needed)
 - Look into scope methods (read article) and make sure what you have applies
-- Adjust error boxes so they apply to dropdown boxes, and text areas too (not just text fields)
 - Build out main home/welcome page with additional links (?) and ease of navigation (might be mostly formatting)
 - Continue building out views and links for a more comprehensive and user-friendly interface (climb show views, etc.)
+    (See below list for all options and make sure they are included where needed.)
 - Based on what you build out in views, etc.: Update before_action (require_login and find method) in controllers
-- Make sure link to search for climbs is readily accessible so users check there easily before creating redundant climbs
-- Add additional coloring for validation errors/messages if possible. (See Avi video or look up how to do it and add.)
-- Seed data
+- Adjust error boxes so they apply to dropdown boxes if possible. (See Avi video or look up how to do it and add.)
 - Additional seach features? (Ex. They search climb name and get all reviews for that climb)
-- Depending on search feature, maybe make it so only one climb of the same name can be input
 
 - Update resources/routes so they only show what they use (ex. if you do not use edit, delete, etc., have the routes reflect that)
-- Add validations or other catches for uniqueness to avoid redundancy (ex. multiple climbs with same name)
-- Update collections in views to call on instance variable (define in controller), instead of calling on all in view (Ex. Climb.all)
 - Add another scope method (?) Make sure you completely understand the one you have in there! (Alphabetize?) Watch video.
     -Something like this for a search: scope :search, -> (query) { where("name LIKE ?", "%" + query + "%") }
-- Clean up code (ex. having alphabetize method in both climb and location models. Is there a better way to do this?)
+- Clean up code (ex. having alphabetize method in both climb and location models. Is there a better way to do this?,
+    update method in reviews controller, etc.)
 - See list and specs for additionals
 - template! :)
 
@@ -116,8 +113,9 @@ home page - user home page
 
 
 Site options breakdown:
-    Add a new climb  - spray
+    Add a new climb  - spray 
     Add a new review  - spray
+    Edit a climb review - spray
     See all climbs  - send
         See a climb  - send
         See a climb's total reviews' - send
@@ -127,4 +125,5 @@ Site options breakdown:
         See a review - send
     See grouped ratings for climbs - send
     Search for a climb - either (more send)
+    Overall ratings page
 

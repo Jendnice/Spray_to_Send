@@ -49,14 +49,14 @@ class ReviewsController < ApplicationController
         if review_params.present? && review_params[:climb_id].present?
          @review.update(review_params)
              if @review.save
-             flash[:message] = "#{@review.title} has been updated!"
+             flash[:message] = "'#{@review.title}' has been updated!"
              redirect_to review_path(@review)
              else
               @climbs = Climb.all.alphabetical_order
               render :edit
              end
        else
-        flash[:message] = "#{@review.title} has to have a climb. Please try again!"
+        flash[:message] = "Your spray is missing some necessary content! Please try again."
         @climbs = Climb.all.alphabetical_order
         render :edit
        end
