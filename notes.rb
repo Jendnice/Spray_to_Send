@@ -83,9 +83,13 @@ Review, Climb, Location
     X scope :search, -> (query) { where("name LIKE ?", "%" + query + "%") }
 - X Make it so only one location of same name can be input
 
-- Check out main home/welcome page links and ease of navigation
+
 - Continue building out views and links for a more comprehensive and user-friendly interface (climb show views, etc.)
     (See below list for all options and make sure they are included where needed.)
+        -center spacing for top headline
+        -uniformity in h1 vs h2, etc. each page
+        -formatting each view (spacing things out, etc.)
+        -italicize all error messages
 
 - Italicize all error messages you created in controllers. (Maybe Devise views messages too if not too complicated.)
 - Based on what you build out in views, etc.: Update before_action (require_login and find_ method) in controllers
