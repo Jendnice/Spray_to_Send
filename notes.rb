@@ -83,10 +83,8 @@ Review, Climb, Location
     X scope :search, -> (query) { where("name LIKE ?", "%" + query + "%") }
 - X Make it so only one location of same name can be input
 
-
-- Link to ratings page and grouped_ratings page where appropriate (and update content/formatting on ratings page)
-    climbs_grouped_ratings_path   (Make sure /ratings and "grouped_ratings" work ccorrectly)
-- Look into scope methods (read article) and make sure what you have applies
+  
+- Add destroy to reviews model (can only delete if you created)
 - Build out main home/welcome page with additional links (?) and ease of navigation (might be mostly formatting)
 - Continue building out views and links for a more comprehensive and user-friendly interface (climb show views, etc.)
     (See below list for all options and make sure they are included where needed.)
@@ -98,7 +96,7 @@ Review, Climb, Location
 - Additional seach features? (Ex. They search climb name and get all reviews for that climb)
 
 - Update resources/routes so they only show what they use (ex. if you do not use edit, delete, etc., have the routes reflect that)
-- Make sure you completely understand the scope method you have in there! Watch video.
+- Make sure you completely understand the scope method you have in there! Watch video. Read scope method article!
     scope :search, -> (query) { where("name LIKE ?", "%" + query + "%") }
 - Clean up code (ex. having alphabetize method in both climb and location models. Is there a better way to do this?,
     update method in reviews controller, etc.)
