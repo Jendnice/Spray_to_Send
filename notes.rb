@@ -83,23 +83,21 @@ Review, Climb, Location
     X scope :search, -> (query) { where("name LIKE ?", "%" + query + "%") }
 - X Make it so only one location of same name can be input
 
-  
+- template! :)
 - Build out main home/welcome page with additional links (?) and ease of navigation (might be mostly formatting)
 - Continue building out views and links for a more comprehensive and user-friendly interface (climb show views, etc.)
     (See below list for all options and make sure they are included where needed.)
 
-- template! :)
-
-- Based on what you build out in views, etc.: Update before_action (require_login and find method) in controllers
+- Based on what you build out in views, etc.: Update before_action (require_login and find_ method) in controllers
 - Adjust error boxes so they apply to dropdown boxes if possible. (See Avi video or look up how to do it and add.)
 - Additional seach features? (Ex. They search climb name and get all reviews for that climb)
-
 - Update resources/routes so they only show what they use (ex. if you do not use edit, delete, etc., have the routes reflect that)
-- Make sure you completely understand the scope method you have in there! Watch video. Read scope method article!
-    scope :search, -> (query) { where("name LIKE ?", "%" + query + "%") }
 - Clean up code (ex. having alphabetize method in both climb and location models. Is there a better way to do this?,
     update method in reviews controller, etc.)
+- README, etc.
 - See list and specs for additionals
+- Make sure you completely understand the scope method you have in there! Watch video. Read scope method article!
+    scope :search, -> (query) { where("name LIKE ?", "%" + query + "%") }
 - template! :)
 
 
@@ -114,6 +112,7 @@ Site options breakdown:
     Add a new climb  - spray 
     Add a new review  - spray
     Edit a climb review - spray
+    (Delete a climb review) - spray
     See all climbs  - send
         See a climb  - send
         See a climb's total reviews' - send
@@ -123,5 +122,4 @@ Site options breakdown:
         See a review - send
     See grouped ratings for climbs - send
     Search for a climb - either (more send)
-    Overall ratings page
 
