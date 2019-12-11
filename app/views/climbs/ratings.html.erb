@@ -1,12 +1,14 @@
 <h1>Welcome to the ratings page!</h1>
 
+</br>
 <% @climbs.each do |c| %>
     <h2><%= link_to c.name, climb_path(c)  %> - <%= c.grade %> </h2>
     <ul>
     <% c.reviews.each do |r| %>
-        <li><h4><%= link_to r.title, review_path(r) %> - <%= pluralize(r.stars, "star") %> </h4></li>
+        <h4><li> &nbsp; &nbsp; &nbsp; &nbsp; <i><%= link_to r.title, review_path(r) %> - <%= pluralize(r.stars, "star") %></i></li></h4>
     <% end %>
-    </ul>
-    <%= link_to "Add Spray", new_climb_review_path(c)%>
+    </br>
+   </ul>
 <% end %>
+</br>
 

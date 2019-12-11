@@ -142,3 +142,32 @@ Reviews New form:
 <%= f.submit %>
 
 <% end %>
+
+
+---------------------------------------------------------------
+
+layouts-application-html
+
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>SprayToSend</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+  <body>
+
+    <div>
+    <%= render 'layouts/alerts' %>
+    <%= render 'layouts/nav' %>
+    <%= yield %>
+    </div>
+
+  </body>
+</html>

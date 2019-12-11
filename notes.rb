@@ -88,9 +88,11 @@ Review, Climb, Location
 - Continue building out views and links for a more comprehensive and user-friendly interface (climb show views, etc.)
     (See below list for all options and make sure they are included where needed.)
 
+- Italicize all error messages you created in controllers. (Maybe Devise views messages too if not too complicated.)
 - Based on what you build out in views, etc.: Update before_action (require_login and find_ method) in controllers
 - Adjust error boxes so they apply to dropdown boxes if possible. (See Avi video or look up how to do it and add.)
 - Additional seach features? (Ex. They search climb name and get all reviews for that climb)
+- Delete test climb
 - Update resources/routes so they only show what they use (ex. if you do not use edit, delete, etc., have the routes reflect that)
 - Clean up code (ex. having alphabetize method in both climb and location models. Is there a better way to do this?,
     update method in reviews controller, etc.)
@@ -123,3 +125,7 @@ Site options breakdown:
     See grouped ratings for climbs - send
     Search for a climb - either (more send)
 
+
+
+
+    <li class="background-item fadein" style="background-image: url(&quot;https://images.unsplash.com/photo-1564858763975-d99de59ee4bb?ixlib=rb-1.2.1&amp;q=99&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=2048&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjcwOTV9&quot;);"></li>
