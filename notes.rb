@@ -91,11 +91,12 @@ Review, Climb, Location
         -formatting each view (spacing things out, etc.)
         -italicize all error messages
 
+- Add capitalize anywhere grades are shown - .capitalize
 - Italicize all error messages you created in controllers. (Maybe Devise views messages too if not too complicated.)
 - Based on what you build out in views, etc.: Update before_action (require_login and find_ method) in controllers
 - Adjust error boxes so they apply to dropdown boxes if possible. (See Avi video or look up how to do it and add.)
 - Additional seach features? (Ex. They search climb name and get all reviews for that climb)
-- Delete test climb, test review, test location (add seed data if needed)
+- Delete test climb, test review, test location, duplicate latin for daggers, (add seed data if needed)
 - Update resources/routes so they only show what they use (ex. if you do not use edit, delete, etc., have the routes reflect that)
 - Clean up code (ex. having alphabetize method in both climb and location models. Is there a better way to do this?,
     update method in reviews controller, etc.)

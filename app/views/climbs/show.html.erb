@@ -2,9 +2,9 @@
 
 <h2><i><%= @climb.name %></i></h2>
 
-<h3>Grade: <%= @climb.grade %></h3>
+<h3>Grade: <%= @climb.grade.capitalize %></h3></br>
 
-<p>Description: <%= @climb.description%> </p>
+<p><b>Description:</b> <%= @climb.description%> </p></br>
 
 
 <% if @climb.reviews.present? %>
