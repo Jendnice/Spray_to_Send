@@ -16,8 +16,8 @@ Specs:
 - [x] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item) -- *I have four models with validations: Climb, User, Review, Location.*
 
 - [x] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes) -- *The Climb model includes two class-level ActiveRecord scope methods:*
-1. Climb.search - When logged in, URL: /climbs
-2. Climb.grouped_ratings - When logged in, URL: /climbs/grouped_ratings
+1. Climb.search - URL: /climbs
+2. Climb.grouped_ratings - URL: /climbs/grouped_ratings
 
 - [x] Include signup (how e.g. Devise) -- *Devise*
 
