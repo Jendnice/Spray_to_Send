@@ -182,3 +182,22 @@ In reviews controller:
             redirect_to reviews_path
         end 
     end
+
+
+
+    def update
+        if review_params.present? && review_params[:climb_id].present?
+         @review.update(review_params)
+             if @review.save
+             flash[:message] = "'#{@review.title}' has been updated!"
+             redirect_to review_path(@review)
+             else
+              climbs
+              render :edit
+             end
+       else
+        flash[:message] = "Your spray is missing some necessary content! Please try again."
+        climbs
+        render :edit
+       end
+    end

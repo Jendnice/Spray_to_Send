@@ -46,20 +46,11 @@ class ReviewsController < ApplicationController
   
     def update
         if review_params.present? && review_params[:climb_id].present?
-         @review.update(review_params)
-             if @review.save
-             flash[:message] = "'#{@review.title}' has been updated!"
-             redirect_to review_path(@review)
-             else
-                climbs
-            #   @climbs = Climb.all.alphabetical_order
-              render :edit
-             end
-       else
-        flash[:message] = "Your spray is missing some necessary content! Please try again."
-        climbs
-        # @climbs = Climb.all.alphabetical_order
-        render :edit
+          @review.update(review_params)
+             review_save
+        else
+         flash[:message] = "Your spray is missing some necessary content! Please try again."
+         climbs_for_render_edit
        end
     end
 
@@ -99,4 +90,21 @@ class ReviewsController < ApplicationController
         @climbs = Climb.all.alphabetical_order
     end 
 
+    def climbs_for_render_edit
+        climbs
+        render :edit
+    end 
+    
+    def review_save
+        if @review.save
+            flash[:message] = "'#{@review.title}' has been updated!"
+            redirect_to review_path(@review)
+        else
+            climbs_for_render_edit
+        end
+    end 
+
 end
+
+
+
