@@ -2,7 +2,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: %i[github]
 
-
   has_many :reviews
   has_many :climbs, through: :reviews
 
@@ -18,4 +17,3 @@ class User < ApplicationRecord
   end
 
 end
-

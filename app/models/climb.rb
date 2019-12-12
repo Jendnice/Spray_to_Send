@@ -14,12 +14,6 @@ class Climb < ApplicationRecord
 
     scope :search, -> (query) { where("name LIKE ?", "%" + query + "%") }
 
-#write the scope method
-#custom route
-#controller method
-#view 
-
-
 
     def self.alphabetical_order
         order(:name)
@@ -33,6 +27,5 @@ class Climb < ApplicationRecord
              self.location = location
         end
     end
-
 
 end

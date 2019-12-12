@@ -131,3 +131,8 @@ Site options breakdown:
     <li class="background-item fadein" style="background-image: url(&quot;https://images.unsplash.com/photo-1564858763975-d99de59ee4bb?ixlib=rb-1.2.1&amp;q=99&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=2048&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjcwOTV9&quot;);"></li>
 
 
+Scope methods:
+    #write the scope method
+    #custom route
+    #controller method
+    #view 
