@@ -33,6 +33,7 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/Jendni
 
 ## Additional Information
 
+This is a portfolio project for the Rails section of Flatiron School's Online Software Engineering program.
 For more information, see the
 [Rails Assessment Lesson for Flatiron](https://github.com/learn-co-students/rails-assessment-v-000).
 
