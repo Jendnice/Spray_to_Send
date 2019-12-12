@@ -23,7 +23,7 @@ class Climb < ApplicationRecord
 
     def self.alphabetical_order
         order(:name)
-    end
+    end 
     
 
     def location_attributes=(location_attributes)

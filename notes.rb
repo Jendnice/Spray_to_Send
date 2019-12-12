@@ -91,12 +91,13 @@ Review, Climb, Location
  X       -formatting each view (spacing things out, etc.)
   X      -italicize all error messages
 - XAdd capitalize anywhere grades are shown - .capitalize
+- XMake sure signup with Github works then delete acct again
 
-- Make sure signup with Github works then delete acct again
+- Clean up code (ex. having alphabetize method in both climb and location models. Is there a better way to do this?,
+  update method in reviews controller, etc.)
 - Based on what you build out in views, etc.: Update before_action (require_login and find_ method) in controllers
 - Update resources/routes so they only show what they use (ex. if you do not use edit, delete, etc., have the routes reflect that)
-- Clean up code (ex. having alphabetize method in both climb and location models. Is there a better way to do this?,
-    update method in reviews controller, etc.)
+
 - README, etc.
 - See list and specs for additionals
 - Make sure you completely understand the scope method you have in there! Watch video. Read scope method article!

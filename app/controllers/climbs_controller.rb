@@ -11,22 +11,21 @@ class ClimbsController < ApplicationController
     def new
         @climb = Climb.new
         @climb.build_location
-        @locations = Location.all.alphabetical_order
+        locations
     end
-
+ 
     def create
         @climb = Climb.new(climb_params)
         if @climb.save
             redirect_to climbs_path
         else
             @climb.build_location
-            @locations = Location.all.alphabetical_order
+            locations
             render :new
         end
     end
 
     def show
-        # @climb = Climb.find_by_id(params[:id])
         unless !(@climb == nil)
             redirect_to climbs_path
         end 
@@ -48,7 +47,11 @@ class ClimbsController < ApplicationController
     end
 
     def find_climb
-         @climb = Climb.find_by(id: params[:id])
+        @climb = Climb.find_by(id: params[:id])
+    end
+
+    def locations
+        @locations = Location.all.alphabetical_order
     end
 
 end
