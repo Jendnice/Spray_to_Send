@@ -1,7 +1,5 @@
 # README
 
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
-![](https://www.pastepic.xyz/image/5oker)
 ![Spray_to_Send60826b2da193afed.png](https://www.pastepic.xyz/images/2019/12/12/Spray_to_Send60826b2da193afed.png)
 
 
