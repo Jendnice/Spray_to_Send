@@ -92,11 +92,10 @@ Review, Climb, Location
   X      -italicize all error messages
 - XAdd capitalize anywhere grades are shown - .capitalize
 - XMake sure signup with Github works then delete acct again
-
-- Clean up code (ex. having alphabetize method in both climb and location models. Is there a better way to do this?,
+- X Clean up code (ex. having alphabetize method in both climb and location models. Is there a better way to do this?,
   update method in reviews controller, etc.)
-- Based on what you build out in views, etc.: Update before_action (require_login and find_ method) in controllers
-- Update resources/routes so they only show what they use (ex. if you do not use edit, delete, etc., have the routes reflect that)
+- X Based on what you build out in views, etc.: Update before_action (require_login and find_ method) in controllers
+- X Update resources/routes so they only show what they use (ex. if you do not use edit, delete, etc., have the routes reflect that)
 
 - README, etc.
 - See list and specs for additionals
