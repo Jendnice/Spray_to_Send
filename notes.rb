@@ -96,11 +96,19 @@ Review, Climb, Location
   update method in reviews controller, etc.)
 - X Based on what you build out in views, etc.: Update before_action (require_login and find_ method) in controllers
 - X Update resources/routes so they only show what they use (ex. if you do not use edit, delete, etc., have the routes reflect that)
+- X README
 
-- README, etc.
 - See list and specs for additionals
-- Make sure you completely understand the scope method you have in there! Watch video. Read scope method article!
-    scope :search, -> (query) { where("name LIKE ?", "%" + query + "%") }
+
+- Blog
+- Walkthrough video 
+
+
+- As part of reviewing for project review:
+      -- Make sure you completely understand the scope method you have in there! Watch video. Read scope method article!
+      scope :search, -> (query) { where("name LIKE ?", "%" + query + "%") }
+      -- Watch Avi ToDo MVC videos
+      -- See mini notebook (Devise, etc.)
 
 
 current welcome page - all welcome page; links adjusted if user logged in
