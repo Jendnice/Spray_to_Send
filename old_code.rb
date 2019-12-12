@@ -1,4 +1,73 @@
 
+Spray to Send (Climbing Review Site) - Project info, breakdown, notes, and old code:
+
+User
+- Username
+- Email
+- Password
+ - has_many :reviews
+ - has_many :climbs through: :reviews
+
+Location
+- Name
+- has_many :climbs
+
+Climb
+- Name
+- Type
+- Description
+- location_id
+- has_many :reviews
+- has_many :users through: :reviews
+- belongs_to :location
+
+Reviews
+- Stars
+- Title
+- Content
+- climb_id
+- user_id
+- belongs_to :climb
+- belongs_to :user
+
+
+current welcome page - all welcome page; links adjusted if user logged in
+
+welcome page - overall welcome page; links/view adjusted if user logged in
+home page - user home page 
+
+
+Site options breakdown:
+   X Add a new climb  - spray 
+   X Add a new review  - spray
+   X Edit a climb review - spray
+   X (Delete a climb review) - spray
+  X  See all climbs  - send
+    X    See a climb  - send
+    X    See a climb's total reviews' - send
+      X  See a climb's individual review ' - send
+    X    Add a new review through a climb - spray
+  X  See all reviews - send
+ X       See a review - send
+  X  See grouped ratings for climbs - send
+  X  Search for a climb - either (more send)
+
+
+    <li class="background-item fadein" style="background-image: url(&quot;https://images.unsplash.com/photo-1564858763975-d99de59ee4bb?ixlib=rb-1.2.1&amp;q=99&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=2048&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjcwOTV9&quot;);"></li>
+
+
+Scope methods:
+    #write the scope method
+    #custom route
+    #controller method
+    #view 
+
+
+-----------------------------------------------------------------------
+
+####### OLD CODE ##########
+
+
 Right after "All the Spray!"
 <% if @reviews.present? %>
 <ul>
