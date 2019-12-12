@@ -4,26 +4,26 @@
 <% if params[:climb_id] %>
     <%= f.hidden_field :climb_id %>
 <% else %>
-    <div>
+    <div></br>
         <%= f.label :climb_id, "Select a climb!" %>
         <%= f.collection_select :climb_id, @climbs, :id, :name, include_blank: true %>
-    </div>
+    </div></br> 
     <% end %>
 <div>
     <%= f.label :stars %>
     <%= f.number_field :stars, min:1, max:5 %>
-</div>
+</div></br>
 
 <div>
     <%= f.label :title %>
     <%= f.text_field :title %>
-</div>
+</div></br>
 
 <div>
-    <%= f.label :content %>
+    <%= f.label :content %> &nbsp;
     <%= f.text_area :content %>
-</div>
-
+</div></br>
+</br>
 <%= f.submit %>
 
 <% end %>

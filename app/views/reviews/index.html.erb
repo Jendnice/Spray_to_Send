@@ -3,10 +3,10 @@
         <h2> Location: <%= @climb.location.name %></h2>
         <% if @reviews.present? %>
             <ul>
-            <h3> Reviews: </h3> 
+            <h3> Reviews: </h3> </br>
             <% @reviews.each do |r| %>
-            <li> <h4> <%= r.title %> - <%= pluralize(r.stars, "star") %> </h4> </li>
-            <p> <%= r.content %> </p>
+            <li> <h4> - <%= r.title %> - <%= pluralize(r.stars, "star") %> </h4> </li>
+            <p> <i><%= r.content %></i> </p>
         <% end %>
             <ul> </br>
             <%= link_to "Add Spray", new_climb_review_path(@climb)%>
@@ -16,14 +16,16 @@
         <% end %>
  
 <% else %>
-    <h1> All the spray! </h1>
-       <h3> Reviews: </h3>   
-            <% @climbs.each do |c| %>
+    <h1> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  All the Spray! </h1>
+       <h2></h2>
+       <h2> Reviews: </h2></br>   
+            <% @climbs.each do |c| %>  
                 <%  if c.reviews.present? %>
                 <ul>
                   <% c.reviews.each do |r| %>
                      <li> <h4> <%= link_to r.climb.name, review_path(r) %> - <%= r.title %> - <%= pluralize(r.stars, "star") %> </h4> </li>
-                     <p> <%= r.content %> </p>
+                     <p> <i><%= r.content %></i> </p>
+                     </br>
                   <% end %>
                 </ul>
             <% end %>
