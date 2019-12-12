@@ -94,7 +94,6 @@ Review, Climb, Location
 
 - Make sure signup with Github works then delete acct again
 - Based on what you build out in views, etc.: Update before_action (require_login and find_ method) in controllers
-- Delete test climb, test review, test location, duplicate latin for daggers, (add seed data if needed)
 - Update resources/routes so they only show what they use (ex. if you do not use edit, delete, etc., have the routes reflect that)
 - Clean up code (ex. having alphabetize method in both climb and location models. Is there a better way to do this?,
     update method in reviews controller, etc.)
