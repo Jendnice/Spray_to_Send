@@ -171,3 +171,14 @@ layouts-application-html
 
   </body>
 </html>
+
+----------------------------------------------------------
+
+In reviews controller:
+
+    def review
+        @review = Review.find_by_id(params[:id])
+        unless !(@review == nil)
+            redirect_to reviews_path
+        end 
+    end

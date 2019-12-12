@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
         if find_climb
             @reviews = @climb.reviews.all  
         else
-            @climbs = Climb.all.alphabetical_order
+            climbs
             @reviews = Review.all
         end   
 
@@ -18,7 +18,7 @@ class ReviewsController < ApplicationController
         if find_climb
             @review = @climb.reviews.build
         else
-            @climbs = Climb.all.alphabetical_order
+            climbs
             @review = Review.new
         end    
     end
@@ -29,16 +29,9 @@ class ReviewsController < ApplicationController
             flash[:message] = "Thanks for the spray!"
             redirect_to review_path(@review)
         else
-            @climbs = Climb.all.alphabetical_order
+            climbs
             render :new
         end
-    end
-
-    def review
-        @review = Review.find_by_id(params[:id])
-        unless !(@review == nil)
-            redirect_to reviews_path
-        end 
     end
 
     def show
@@ -48,7 +41,7 @@ class ReviewsController < ApplicationController
     end 
 
     def edit
-        @climbs = Climb.all.alphabetical_order
+        climbs
     end
   
     def update
@@ -58,12 +51,14 @@ class ReviewsController < ApplicationController
              flash[:message] = "'#{@review.title}' has been updated!"
              redirect_to review_path(@review)
              else
-              @climbs = Climb.all.alphabetical_order
+                climbs
+            #   @climbs = Climb.all.alphabetical_order
               render :edit
              end
        else
         flash[:message] = "Your spray is missing some necessary content! Please try again."
-        @climbs = Climb.all.alphabetical_order
+        climbs
+        # @climbs = Climb.all.alphabetical_order
         render :edit
        end
     end
@@ -100,5 +95,8 @@ class ReviewsController < ApplicationController
         end
     end
 
+    def climbs
+        @climbs = Climb.all.alphabetical_order
+    end 
 
 end
