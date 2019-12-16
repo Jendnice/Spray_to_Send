@@ -54,7 +54,7 @@ class ReviewsController < ApplicationController
        end
     end
 
-    def destroy
+    def destroy        
         if @review
           @review.destroy
           flash[:message] = "The spray has been removed!"
