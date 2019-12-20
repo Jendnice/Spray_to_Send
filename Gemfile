@@ -27,6 +27,8 @@ gem 'omniauth'
 gem 'omniauth-github'
 gem 'dotenv-rails'
 
+gem "rack", ">= 2.0.8"
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
