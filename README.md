@@ -1,6 +1,6 @@
 # Spray to Send
 
-![Spray_to_Send60826b2da193afed.png](https://www.pastepic.xyz/images/2019/12/12/Spray_to_Send60826b2da193afed.png)
+![Spray-to-send-screenshot-20205b3f860f57aede80.png](https://www.pastepic.xyz/images/2020/04/16/Spray-to-send-screenshot-20205b3f860f57aede80.png)
 
 
 This app provides a fluid and seamless one-stop-shop for climbers to check out climbs they're interested in sending, or provide reviews (spray) for climbs they've already sent. Climb on!
