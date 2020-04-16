@@ -29,7 +29,7 @@ gem 'dotenv-rails'
 
 gem "rack", ">= 2.0.8"
 
-gem "actionview", ">= 6.0.2.2"
+# gem "actionview", ">= 6.0.2.2"
 
 
 
