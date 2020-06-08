@@ -140,7 +140,11 @@ GEM
     pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
+<<<<<<< HEAD
     public_suffix (4.0.5)
+=======
+    public_suffix (4.0.4)
+>>>>>>> 890d7c593369e36534acc82a2bd0680abcb5160a
     puma (4.3.5)
       nio4r (~> 2.0)
     rack (2.2.2)
