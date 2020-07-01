@@ -26,12 +26,9 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-github'
 gem 'dotenv-rails'
-
 gem "rack", ">= 2.0.8"
 
 # gem "actionview", ">= 6.0.2.2"
-
-
 
 
 # Use Active Storage variant
